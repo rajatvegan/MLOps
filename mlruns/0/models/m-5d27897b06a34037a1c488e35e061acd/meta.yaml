@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Rajat/OneDrive/Desktop/STUDY/MLOps/mlruns/0/models/m-5d27897b06a34037a1c488e35e061acd/artifacts
+creation_timestamp: 1749740102045
+experiment_id: '0'
+last_updated_timestamp: 1749740107857
+model_id: m-5d27897b06a34037a1c488e35e061acd
+model_type: null
+name: model
+source_run_id: 24996b6e7abb4c1688106fc31ec713b8
+status: 2
+status_message: null
