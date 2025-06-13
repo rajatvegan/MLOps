@@ -1,6 +1,7 @@
 import os
 import warnings
 import sys
+
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -9,7 +10,7 @@ from sklearn.linear_model import ElasticNet
 from urllib.parse import urlparse
 import mlflow
 import mlflow.sklearn
-from mlflow.models import infer_signature
+
 import logging
 
 logging.basicConfig(level=logging.WARN)
@@ -69,25 +70,17 @@ if __name__ == "__main__":
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
 
-        input_example = train_x.iloc[:1]
-        signature = infer_signature(train_x, lr.predict(train_x))
-
+        remote_server_uri = "https://dagshub.com/rajatvegan/MLOps.mlflow"
+        mlflow.set_tracking_uri(remote_server_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
-
+        
         # Model registry does not work with file store
         if tracking_url_type_store != "file":
-            # Register the model with signature and input example
-            mlflow.sklearn.log_model(
-                sk_model=lr,
-                name="model",
-                input_example=input_example,
-                signature=signature,
-                registered_model_name="ElasticnetWineModel"
-            )
+
+            # Register the model
+            # There are other ways to use the Model Registry, which depends on the use case,
+            # please refer to the doc for more information:
+            # https://mlflow.org/docs/latest/model-registry.html#api-workflow
+            mlflow.sklearn.log_model(lr, "model", registered_model_name="ElasticnetWineModel")
         else:
-            mlflow.sklearn.log_model(
-                sk_model=lr,
-                name="model",
-                input_example=input_example,
-                signature=signature
-            )
+            mlflow.sklearn.log_model(lr, "model")                
