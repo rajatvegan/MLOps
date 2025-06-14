@@ -26,8 +26,6 @@ aws configure
 mlflow server -h 0.0.0.0 --default-artifact-root s3://<s3-bucket-name>
 
 
-
-
 # ON LOCAL
 aws cli installation on windows: msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi   
 aws configure
@@ -39,3 +37,18 @@ $env:MLFLOW_TRACKING_URI="http://ec2-13-232-72-41.ap-south-1.compute.amazonaws.c
 export MLFLOW_TRACKING_URI=http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
 export MLFLOW_USERNAME=
 export MLFLOW_PASSWORD=
+
+
+
+# Chest-Cancer-Classification-using-MLflow-DVC-workflow
+Update config.yaml
+Update secrets.yaml [Optional]
+Update params.yaml
+Update the entity
+Update the configuration manager in src config
+Update the components
+Update the pipeline
+Update the main.py
+Update the dvc.yaml
+
+
