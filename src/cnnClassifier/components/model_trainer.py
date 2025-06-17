@@ -2,7 +2,7 @@ import os
 import urllib.request as request
 from zipfile import ZipFile
 import tensorflow as tf
-tf.data.experimental.enable_debug_mode()
+
 import time
 from cnnClassifier.entity.config_entity import TrainingConfig
 from pathlib import Path

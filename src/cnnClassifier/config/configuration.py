@@ -79,7 +79,7 @@ class ConfigurationManager:
             eval_config = EvaluationConfig(
                 path_of_model="artifacts/training/model.keras",
                 training_data="artifacts/data_ingestion/Chest-CT-Scan-data",
-                mlflow_uri="http://ec2-3-110-122-177.ap-south-1.compute.amazonaws.com:5000/",
+                mlflow_uri="http://ec2-3-110-176-223.ap-south-1.compute.amazonaws.com:5000/",
                 all_params=self.params,
                 params_image_size=self.params.IMAGE_SIZE,
                 params_batch_size=self.params.BATCH_SIZE
