@@ -34,7 +34,7 @@ pip install mlflow, boto3
 # set uri in your local terminal and in your code
 $env:MLFLOW_TRACKING_URI="http://ec2-13-232-72-41.ap-south-1.compute.amazonaws.com:5000/" 
 
-export MLFLOW_TRACKING_URI=http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
+export MLFLOW_TRACKING_URI=http://dogshub.com/
 export MLFLOW_USERNAME=
 export MLFLOW_PASSWORD=
 
